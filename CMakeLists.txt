@@ -13,3 +13,4 @@ project ("easy_tx")
 
 # Include sub-projects.
 add_subdirectory ("easy_tx")
+add_subdirectory ("easy_tx/service/log")

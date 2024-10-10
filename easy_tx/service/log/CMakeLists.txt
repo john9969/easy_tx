@@ -3,11 +3,13 @@
 #
 
 # Add source to this project's executable.
+project(test_log)
 
-add_executable (easy_tx "easy_tx.cpp" "easy_tx.h" "service/log/log.h" "service/log/log.cpp" "service/log/main_test_log.cpp")
-
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET easy_tx PROPERTY CXX_STANDARD 20)
-endif()
+set(CMAKE_CXX_STANDARD 20)
+set(SOURCE_LOG
+    log.h
+    log.cpp
+)
+add_executable (test_log ${SOURCE_LOG} "main_test_log.cpp")
 
 # TODO: Add tests and install targets if needed.
