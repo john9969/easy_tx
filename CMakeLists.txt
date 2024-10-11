@@ -9,8 +9,18 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("easy_tx")
+project (easy_tx)
 
 # Include sub-projects.
 add_subdirectory ("easy_tx")
 add_subdirectory ("easy_tx/service/log")
+add_subdirectory ("easy_tx/lib/observer")
+
+target_include_directories(easy_tx PUBLIC ${CMAKE_SOURCE_DIR}/easy_tx/app)
+target_include_directories(easy_tx PUBLIC ${CMAKE_SOURCE_DIR}/easy_tx/board)
+target_include_directories(easy_tx PUBLIC ${CMAKE_SOURCE_DIR}/easy_tx/lib)
+target_include_directories(easy_tx PUBLIC ${CMAKE_SOURCE_DIR}/easy_tx/lib/observer)
+
+target_include_directories(easy_tx PUBLIC ${CMAKE_SOURCE_DIR}/easy_tx/service)
+target_include_directories(easy_tx PUBLIC ${CMAKE_SOURCE_DIR}/easy_tx/service/log)
+

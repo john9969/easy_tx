@@ -1,5 +1,5 @@
 #include "iostream"
-#include "log.h"
+#include "si_log.h"
 int main() {
 	std::cout << "hello from log" << '\n';
 }
