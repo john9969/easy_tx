@@ -13,7 +13,7 @@ void call() {
 
 int main() {
 
-	std::cout << "START_TEST_OBSERVER " << std::endl;
+	std::cout << "START_TEST_OBSERVER 1 " << std::endl;
 	std::cout << "-----UT001-------" << std::endl;
 	std::cout << "" << std::endl;
 	std::cout << "" << std::endl;
