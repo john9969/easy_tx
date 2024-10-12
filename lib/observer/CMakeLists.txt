@@ -5,15 +5,12 @@
 # Add source to this project's executable.
 cmake_minimum_required (VERSION 3.13)
 
-project(test_observer)
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET easy_tx PROPERTY CXX_STANDARD 20)
-endif()
+project(Observer)
 
 set(SOURCE_OBSERVER
     "observer.h"
     "observer.cpp"
 )
-add_executable (test_observer ${SOURCE_OBSERVER} "test-observer.cpp")
+add_library(observer STATIC ${SOURCE_OBSERVER})
 
 # TODO: Add tests and install targets if needed.

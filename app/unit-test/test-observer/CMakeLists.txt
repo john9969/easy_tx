@@ -4,15 +4,10 @@
 
 # Add source to this project's executable.
 cmake_minimum_required (VERSION 3.13)
-project(test_log)
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET easy_tx PROPERTY CXX_STANDARD 20)
-endif()
 
-set(SOURCE_LOG
-    "si_log.h"
-    "si_log.cpp"
-)
-add_executable (test_log ${SOURCE_LOG} "test-log.cpp")
+project(test_observer)
 
+
+add_executable (test_observer main.cpp )
+target_link_libraries(test_observer observer)
 # TODO: Add tests and install targets if needed.

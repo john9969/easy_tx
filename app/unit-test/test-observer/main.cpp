@@ -8,7 +8,7 @@
 //--------code client bellow--------------
 class ClientSubject :public ISubject {
 
-	
+
 private:
 	ClientSubject() {
 
@@ -26,7 +26,7 @@ ClientSubject* ClientSubject::getInstance() {
 }
 
 
-class ClientObserver: public IObserver {
+class ClientObserver : public IObserver {
 public:
 	ClientObserver(Subject* subject, std::string name) : IObserver(subject, name)
 	{
@@ -42,7 +42,7 @@ public:
 };
 void call() {
 	Subject* clientSubject = ClientSubject::getInstance();
-	}
+}
 //---------------------------------------
 
 int main() {
@@ -52,8 +52,8 @@ int main() {
 	std::cout << "START_TEST_OBSERVER " << std::endl;
 	std::cout << "-----UT001-------" << std::endl;
 	clientSubject->notifyAll();
-	std::cout <<"" << std::endl;
-	std::cout <<"" << std::endl;
+	std::cout << "" << std::endl;
+	std::cout << "" << std::endl;
 
 	std::cout << "-----UT002-------" << std::endl;
 	clientSubject->notifybyName("client");
@@ -64,6 +64,14 @@ int main() {
 
 	if (!clientSubject->notifybyName("client-diff")) {
 		std::cout << "<OUTPUT>: hasChange() not call in diff name" << std::endl;
+	}
+	std::cout << "" << std::endl;
+	std::cout << "" << std::endl;
+	std::cout << "-----UT004-------" << std::endl;
+	std::cout << "-----DELETE OBSERVER-------" << std::endl;
+	delete clientObserver;
+	if (!clientSubject->notifybyName("client")) {
+		std::cout << "<OUTPUT>: hasChange() not call when deleted client" << std::endl;
 	}
 	std::cout << "" << std::endl;
 	std::cout << "" << std::endl;
