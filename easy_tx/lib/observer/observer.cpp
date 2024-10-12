@@ -4,14 +4,17 @@ ISubject::ISubject() {
 }
 
 bool ISubject::addObserver(Observer* obverver) {
-	if(!this->_listObserver.size()) this->_listObserver.push_back(obverver);
-	for (auto it : this->_listObserver) {
+	if (!this->_listObserver.size()) {
+		this->_listObserver.push_back(obverver);
+		return true;
+	}
+		for (auto it : this->_listObserver) {
 		if (it == obverver) {
 			return false; 
 		}
 	}
 	this->_listObserver.push_back(obverver);
-	return 1;
+	return true;
 }
 bool ISubject::removeObserver(Observer * obverver) {
 	if (!this->_listObserver.size()) return 0;
@@ -44,7 +47,10 @@ int8_t ISubject::notifybyName(std::string name) {
 IObserver::IObserver(Subject* subject,
 	std::string name): _subject(subject), _name(name){
 	if (!_subject->addObserver(this)) {
-		std::cout << "error can not add observer" << std::endl;
+		std::cout << "error can not add observer 1" << std::endl;
+	}
+	else {
+		std::cout << "add observer success" << std::endl;
 	}
 }
 
