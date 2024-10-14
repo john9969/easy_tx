@@ -18,16 +18,21 @@ include_directories(app/
 	app/unit-test/
 	boad/
 	board/log/
+	board/screenShot/
 	lib/
 	lib/observer/
 	service/
 	service/log/
+	service/si_ScreenShot/
 	)
 
 add_subdirectory (lib/observer)
 add_subdirectory (app/main-app)
 add_subdirectory (app/unit-test/test-observer)
-add_subdirectory (app/unit-test/test-log)
+add_subdirectory (app/unit-test/test-screenShot)
+#add_subdirectory (app/unit-test/test-log)
 add_subdirectory (board)
 add_subdirectory (board/log)
+add_subdirectory (board/screenShot)
+add_subdirectory (service/si_ScreenShot)
 

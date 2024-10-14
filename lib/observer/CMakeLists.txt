@@ -11,6 +11,6 @@ set(SOURCE_OBSERVER
     "observer.h"
     "observer.cpp"
 )
-add_library(observer STATIC ${SOURCE_OBSERVER})
-
+add_library(observer STATIC ${SOURCE_OBSERVER} )
+#target_link_libraries(observer log)
 # TODO: Add tests and install targets if needed.

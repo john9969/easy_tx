@@ -12,5 +12,4 @@ set(SOURCE_LOG
     log.cpp
 )
 add_library (log STATIC ${SOURCE_LOG})
-
 # TODO: Add tests and install targets if needed.

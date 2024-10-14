@@ -4,10 +4,12 @@
 
 # Add source to this project's executable.
 cmake_minimum_required (VERSION 3.13)
+project(ScreenShot)
 
-project(test_observer)
 
-
-add_executable (test_observer main.cpp  header.h)
-target_link_libraries(test_observer observer)
+set(SOURCE_SCREENSHOT
+    "ScreenShot.h"
+    "ScreenShot.cpp"
+)
+add_library (screenShot STATIC ${SOURCE_SCREENSHOT})
 # TODO: Add tests and install targets if needed.

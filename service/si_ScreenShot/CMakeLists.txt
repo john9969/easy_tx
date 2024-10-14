@@ -4,10 +4,13 @@
 
 # Add source to this project's executable.
 cmake_minimum_required (VERSION 3.13)
+project(SI_ScreenShot)
 
-project(test_log)
 
+set(SOURCE_SI_SCREENSHOT
+    "si_ScreenShot.h"
+    "si_ScreenShot.cpp"
+)
+add_library (si_ScreenShot STATIC ${SOURCE_SI_SCREENSHOT})
 
-add_executable (test_log main.cpp )
-target_link_libraries(test_log log)
 # TODO: Add tests and install targets if needed.

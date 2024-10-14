@@ -5,9 +5,9 @@
 # Add source to this project's executable.
 cmake_minimum_required (VERSION 3.13)
 
-project(test_observer)
+project(test_screenShot)
 
 
-add_executable (test_observer main.cpp  header.h)
-target_link_libraries(test_observer observer)
+add_executable (test_screenShot main.cpp)
+target_link_libraries(test_screenShot screenShot si_ScreenShot)
 # TODO: Add tests and install targets if needed.

@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include "log.h"
+
 class Observer;
 
 class Subject {
