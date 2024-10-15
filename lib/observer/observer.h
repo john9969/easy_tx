@@ -39,14 +39,13 @@ private:
 class ISubject : public Subject {
 public:
 	ISubject();
-	bool addObserver(Observer* obverver) override;
-	bool removeObserver(Observer* obverver) override;
-	int8_t notifyAll() override;
-	int8_t notifybyName(std::string name) override;
-	int8_t notifyStringbyName(std::string name, std::string content) override;
-	int8_t notifyBoolbyName(std::string name, bool content) override;
-	int8_t notifyIntbyName(std::string name, int content) override;
+	bool addObserver(Observer* obverver) override final;
+	bool removeObserver(Observer* obverver) override final;
+	int8_t notifyAll() override final;
+	int8_t notifybyName(std::string name) override final;
+	int8_t notifyStringbyName(std::string name, std::string content) override final;
+	int8_t notifyBoolbyName(std::string name, bool content) override final;
+	int8_t notifyIntbyName(std::string name, int content) override final;
 private:
 	std::vector<Observer*> _listObserver;
-
 };

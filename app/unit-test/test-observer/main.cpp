@@ -37,7 +37,7 @@ public:
 	}
 	int8_t hasChanged() {
 		std::cout << "<OUTPUT>: hasChange() from client called" << std::endl;
-		return 1;
+		return 1;	
 	}
 	int8_t hasChangedString(std::string data) override {
 		std::cout << "<OUTPUT>: hasChangeString() from client called: "<< data << std::endl;
