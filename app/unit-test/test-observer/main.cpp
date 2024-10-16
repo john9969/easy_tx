@@ -37,6 +37,10 @@ public:
 	}
 	int8_t hasChanged() {
 		std::cout << "<OUTPUT>: hasChange() from client called" << std::endl;
+		return 1;	
+	}
+	int8_t hasChangedString(std::string data) override {
+		std::cout << "<OUTPUT>: hasChangeString() from client called: "<< data << std::endl;
 		return 1;
 	}
 };
@@ -62,6 +66,11 @@ int main() {
 
 	std::cout << "-----UT003-------" << std::endl;
 
+	clientSubject->notifyStringbyName("client","hello from Subject");
+	std::cout << "" << std::endl;
+	std::cout << "" << std::endl;
+
+	std::cout << "-----UT004-------" << std::endl;
 	if (!clientSubject->notifybyName("client-diff")) {
 		std::cout << "<OUTPUT>: hasChange() not call in diff name" << std::endl;
 	}
